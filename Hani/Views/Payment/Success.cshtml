@@ -1,0 +1,329 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Success</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0xxMYUSuYO8SoFxn0sJJfNNOrCNwtMbM&callback=myMap"></script>
+
+    <style>
+        .search {
+            width: 30%;
+            position: relative;
+            display: flex;
+        }
+
+        .searchTerm {
+            width: 90%;
+            border: 3px solid #00B4CC;
+            border-right: none;
+            padding: 15px;
+            height: 20px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+        }
+
+        .img-container:hover .bag-btn1 {
+            transform: translateX(-50%);
+        }
+        /*btn thanh toán */
+        @@import url(https://fonts.googleapis.com/css?family=Raleway:400);
+
+        .btn-dh {
+            margin-left: 20px;
+            width: 90%;
+            text-align: center;
+            font-family: 'Raleway', Arial, sans-serif;
+            border: none;
+            background-color: #5666a5;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            text-transform: uppercase;
+            line-height: 46px;
+            font-weight: 400;
+            font-size: 1em;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 23px;
+            letter-spacing: 3px;
+            -webkit-transform: translateZ(0);
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .btn-ttmh {
+            margin-left: 20px;
+            width: 90%;
+            text-align: center;
+            font-size: 15px;
+            font-family: 'Raleway', Arial, sans-serif;
+            border: 1px solid #5666a5;
+            background-color: white;
+            border-radius: 23px;
+            color: #5666a5;
+            cursor: pointer;
+            display: inline-block;
+            text-transform: uppercase;
+            line-height: 46px;
+            font-weight: 400;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 3px;
+            -webkit-transform: translateZ(0);
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        /*Search bar */
+        .searchTerm:focus {
+            color: #00B4CC;
+        }
+
+        .searchButton {
+            width: 40px;
+            height: 36px;
+            border: 1px solid #00B4CC;
+            background: #00B4CC;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        /*table*/
+        table {
+            border-collapse: separate;
+            border: 1px solid rgb(248, 247, 247);
+        }
+
+        th, td {
+            border: 1px solid rgb(252, 243, 243);
+            padding: 20px;
+            margin: 50px;
+            width: 150px;
+        }
+
+        .form-check-label {
+            padding-left: 0.25rem;
+        }
+
+        .collapse {
+            margin: 10px 0px 0px 20px;
+        }
+
+        div.section > div {
+            width: 100%;
+            display: inline-flex;
+        }
+
+            div.section > div > input {
+                margin: 0;
+                padding-left: 5px;
+                font-size: 10px;
+                padding-right: 5px;
+                max-width: 18%;
+                text-align: center;
+            }
+
+
+        @@media (max-width: 1000px) {
+            .container > .row {
+                padding: 0 !important;
+            }
+
+                .container > .row > .col-xs-12.col-sm-5 {
+                    padding-right: 0;
+                }
+
+                .container > .row > .col-xs-12.col-sm-9 > div > p {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+
+                .container > .row > .col-xs-12.col-sm-9 > div > ul {
+                    padding-left: 10px !important;
+                }
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<div class="contenedor">
+    <nav class="navbar">
+        <div class="navbar-center">
+            <a href="/Home">
+                <img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img" />
+            </a>
+        </div>
+    </nav>
+</div>
+<body>
+    @model Hani.Models.Transaction;
+    <div class="container" style="margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-12" style="margin: 30px 0px;">
+                        <div class="card">
+
+                            <!-- Card header -->
+                            <div class="card-header" role="tab" id="headingOne1">
+                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                                   aria-controls="collapseOne1">
+                                    <h5 class="mb-0">
+                                        Thông tin giao hàng <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <!-- FORM THONG TIN GIAO HANG -->
+                            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                                 data-parent="#accordionEx">
+                                <h2 style="color: green;"><i>Đặt hàng thành công</i></h2>
+                                <form method="POST" asp-controller="Payment" asp-action="InsertTransaction">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1"><i class="fas fa-user"></i></label>
+                                        <input asp-for="Tr_name" style="width: 85%;" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Tên người nhận" value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1"><i class="fas fa-phone"></i></label>
+                                        <input asp-for="Tr_phone" value="" name="phone" style="width: 85%;" class="form-control" id="exampleFormControlInput1" placeholder="Số điện thoại" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1"><i class="fas fa-map-marker-alt"></i></label>
+                                        <input asp-for="Tr_address" style="width: 85%;" class="form-control" id="exampleFormControlInput1" placeholder="Địa chỉ" name="address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1"><i class="fas fa-clipboard"></i></label>
+                                        <textarea asp-for="Tr_note" style="width: 85%;" rows="4" cols="50" class="form-control" id="exampleFormControlInput1" placeholder="Ghi chú" name="note"></textarea>
+                                    </div>
+                                    <input type="hidden" asp-for="Tr_status" value="0"></input>
+                                    <input type="hidden" asp-for="Tr_total" id="total" value=""></input>
+                                    <button type="submit" class="btn-dh" href="#">Đặt hàng</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <!-- Card header -->
+                            <div class="card-header" role="tab" id="headingOne1">
+                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                                   aria-controls="collapseOne1">
+                                    <h5 class="mb-0">
+                                        Phương thức thanh toán <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <!-- Card body -->
+                            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                                 data-parent="#accordionEx">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Thanh toán khi nhận hàng
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-5" style="margin-top: 30px; ">
+                <div class="card" style="padding-bottom: 20px;">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingOne1">
+                        <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                           aria-controls="collapseOne1">
+                            <h5 class="mb-0">
+                                Thông tin đơn hàng<i class="fas fa-angle-down rotate-icon"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseOne1" class="collapse show cartBox" role="tabpanel" aria-labelledby="headingOne1"
+                         data-parent="#accordionEx">
+
+                        <table id="gh" border="1" style="font-size: 14px;">
+                        </table>
+                        <a class="btn-ttmh" href="/Menu/Order1">Tiếp tục mua hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <script>
+        @*$(document).ready(function(){
+        $(".btn-dh").click(function (){
+           alertify.success("Đã đặt hàng thành công");
+        });
+    });*@
+
+
+        totalPrice = 0;
+        totalQuantity = 0;
+
+        //adding cartbox data to table
+        const cartBox = document.querySelector('.cartBox');
+        const cardBoxTable = cartBox.querySelector('table');
+        let tableData = '';
+        tableData += '<tr style="width: 10%;"><th>STT</th><th>Sản phẩm</th><th>Số lượng</th><th>Thành tiền</th></tr>';
+
+        if (JSON.parse(localStorage.getItem('items')) === null) {
+            tableData += '<tr><td colspan="5">No items found</td></tr>'
+        } else {
+            JSON.parse(localStorage.getItem('items')).map(data => {
+                totalPrice += parseInt(data.price * data.no);
+                totalQuantity += parseInt(data.no);
+                tableData += '<tr><td>' + data.id + '</td><td>' + data.name + '</td><td>' + data.no + '</td><td>' + data.price * data.no + 'đ</td></tr>';
+            });
+        }
+        tableData += '<tr><td>Tổng số lượng</td><td colspan="4" style="text-align: right;">' + totalQuantity + '</td></tr>';
+        tableData += '<tr><td>Tổng tiền</td><td colspan="4" style="text-align: right;">' + totalPrice + 'đ</td></tr>';
+
+        cardBoxTable.innerHTML = tableData;
+
+        document.getElementById("total").value = totalPrice;
+    </script>
+</body>
+</html>
+

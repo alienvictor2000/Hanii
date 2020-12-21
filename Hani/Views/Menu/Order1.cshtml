@@ -1,0 +1,800 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HANI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+        @@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Mukta&display=swap');
+        @@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        /* product*/
+        .h1 {
+            color: #080808;
+            padding-left: 180px;
+            padding-top: 20px;
+            position: sticky;
+        }
+
+        .h2 {
+            color: white;
+            padding-left: 40px;
+            padding-top: 20px;
+        }
+
+        @@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+        .product h3 {
+            font-size: 14px;
+            color: white;
+            font-family: 'Mukta', sans-serif;
+        }
+
+        .products-center1 {
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 2fr));
+            grid-column-gap: 1.5rem;
+            grid-row-gap: 2rem;
+            padding-top: 10px;
+        }
+
+        .search {
+            width: 30%;
+            position: relative;
+            display: flex;
+            display: inline-block;
+        }
+
+        .searchTerm {
+            width: 90%;
+            border: 3px solid green;
+            border-right: none;
+            padding: 15px;
+            height: 20px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+        }
+
+        .product-img1 {
+            display: inline-block;
+            width: 100%;
+            min-height: 12rem;
+            transition: var(--mainTransition);
+            border-radius: 5px;
+        }
+
+        .col-sm-4, .col-sm-2, .col-sm-5 {
+@*            border: 5px dotted rgb(134, 146, 141);
+*@            width: 70%;
+            border-radius: 15px;
+            margin-left: 35px;
+            max-width: 600px;
+        }
+
+        .img-container:hover .bag-btn1 {
+            transform: translateX(-50%);
+        }
+        /*btn thanh toán */
+        @@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nerko+One&family=Ubuntu:wght@300&display=swap');
+        @@import url(https://fonts.googleapis.com/css?family=Raleway:400);
+        .btn-tt {
+            margin-left: 20px;
+            width: 90%;
+            text-align: center;
+            font-family: 'Raleway', Arial, sans-serif;
+            border: none;
+            background-color: white;
+            color: green;
+            cursor: pointer;
+            display: inline-block;
+            text-transform: uppercase;
+            line-height: 46px;
+            font-weight: 400;
+            font-size: 1em;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 23px;
+            letter-spacing: 3px;
+            -webkit-transform: translateZ(0);
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        /*Search bar */
+        .searchTerm:focus {
+            color: #00B4CC;
+        }
+
+        .searchButton {
+            width: 40px;
+            height: 36px;
+            border: 1px solid green;
+            background: green;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        /*table*/
+        table {
+            border-collapse: separate;
+            background: saddlebrown;
+            border: 1px solid rgb(248, 247, 247);
+            font-family: 'Mukta', sans-serif;
+        }
+
+        th, td {
+            border: 1px solid rgb(252, 243, 243);
+            padding: 20px;
+            margin: 50px;
+            width: 150px;
+        }
+        .btn-minus {
+            cursor: pointer;
+            font-size: 7px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid gray;
+            border-radius: 2px;
+            border-right: 0;
+        }
+
+        .btn-plus {
+            cursor: pointer;
+            font-size: 7px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid gray;
+            border-radius: 2px;
+            border-left: 0;
+        }
+
+        .form-check-label {
+            padding-left: 0.25rem;
+        }
+
+        .collapse {
+            margin: 0px 20px;
+        }
+
+        div.section > div {
+            width: 100%;
+            display: inline-flex;
+        }
+
+            div.section > div > input {
+                margin: 0;
+                padding-left: 5px;
+                font-size: 10px;
+                padding-right: 5px;
+                max-width: 18%;
+                text-align: center;
+            }
+
+        @@media (max-width: 600px) {
+            .container {
+                margin-top: 0px !important;
+            }
+
+                .container > .row {
+                    padding: 0 !important;
+                }
+
+                    .container > .row > .col-xs-12.col-sm-5 {
+                        padding-right: 0;
+                    }
+
+                    .container > .row > .col-xs-12.col-sm-9 > div > p {
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
+                    }
+
+                    .container > .row > .col-xs-12.col-sm-9 > div > ul {
+                        padding-left: 10px !important;
+                    }
+
+            .section {
+                width: 104%;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            //-- Click on tăng giảm
+            $(".btn-minus").on("click",function(){
+                var now = $(this).parent().children("input[type=text]").val();
+                if ($.isNumeric(now)){
+                    if (parseInt(now)-1 > 0){
+                        now--;
+                    }
+                    $(this).parent().children("input[type=text]").val(now);
+                }else{
+                    $(this).parent().children("input[type=text]").val("1");
+                }
+
+                var sl = $(this).parent().children("input[type=text]").val();
+                var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
+                var res = value.substring(1,7)
+                var price = $(this).parent().children("input[type=hidden]").val()
+                ttprice = parseInt(sl) * parseInt(price)
+                addprice = parseInt(res) - parseInt(price);
+
+                if(parseInt(addprice) == parseInt(ttprice)){
+                    var replace = value.replace(res,addprice);
+                    $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
+                }
+            })
+            $(".btn-plus").on("click",function(){
+                var now = $(this).parent().children("input[type=text]").val();
+                $(this).parent().children("input[type=text]").val(parseInt(now)+1);
+                console.log($(this).parent().children("input[type=text]").val());
+
+                var sl = $(this).parent().children("input[type=text]").val();
+                if(sl >= 2){
+                    var price = $(this).parent().children("input[type=hidden]").val();
+                    var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
+                    var res = value.substring(1,6)
+                    addprice = parseInt(res) + parseInt(price);
+                    var replace = value.replace(res,addprice);
+                    $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
+                }
+            })
+
+            $("input[type=checkbox]").click( function(){
+                var productprice = $(this).parents(".col-lg-7").find("input[type=hidden]").val();
+
+                var sl = $(this).parents(".col-lg-7").find("input[type=text]").val()
+                var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
+                var res = value.substring(1,7)
+                var price = $(this).val();
+
+                    console.log(productprice+" "+sl+" "+value+" "+res+" "+price)
+                if( $(this).is(':checked') ){
+                    totalprice = parseInt(price) + parseInt(productprice)
+                    addprice = parseInt(res) + (parseInt(sl)*parseInt(price));
+                    var replace = value.replace(res,addprice);
+                    console.log(totalprice+" "+addprice+" "+replace)
+                    $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
+                    $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
+                }
+
+                if( $(this).is(':checked') == false){
+                    totalprice = parseInt(productprice) - parseInt(price)
+                    addprice = parseInt(res) - (parseInt(sl)*parseInt(price));
+                    var replace = value.replace(res,addprice);
+                    $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
+                    $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
+                }
+            });
+        })
+
+        function Delete(e) {
+            let items = [];
+            JSON.parse(localStorage.getItem('items')).map(data => {
+                if (data.id != e.parentElement.parentElement.children[0].textContent) {
+                items.push(data);
+            }
+        })
+            localStorage.setItem('items', JSON.stringify(items));
+            window.location.reload();
+        };
+
+        function myAlert() {
+            alert('Chưa có sản phẩm nào trong giỏ hàng');
+        }
+    </script>
+
+</head>
+<body>
+    <div class="contenedor">
+        <nav class="navbar" style="background-color: saddlebrown;">
+            <div class="navbar-center">
+                <a href="/Home">
+                    <img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img" />
+                </a>
+            </div>
+            <div class="search">
+                <form method="post" asp-controller="Menu" asp-action="SearchProduct">
+                    <input type="text" class="searchTerm" style="width: 60%;" placeholder="Trà, Kafe, ..." name="searchInfo">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid" style="margin-top: 30px;">
+
+        <div class="row">
+            <div class="col-sm-2" style="background:url('https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/130463076_3530187167095932_3411529735407162505_o.jpg?_nc_cat=107&ccb=2&_nc_sid=8bfeb9&_nc_ohc=9u6PTOeHS70AX_zT2Bx&_nc_ht=scontent.fvca1-2.fna&oh=ef71b7bc782911f66e05385d5dca0455&oe=5FFE7D03'); padding: 10px 10px 0px 10px;">
+                @*<h1>Drinks </h1>
+                    <a href="#"><span class="float-right badge badge-light round"></span></a><br>
+                    <h1>Foods </h1>
+                    <a href="#"><span class="float-right badge badge-light round"></span></a><br>*@
+                <h1 style="color:white; font-family: 'Fredoka One', cursive;">Menu</h1>
+                @foreach (var item in ViewBag.Cate)
+                {
+                    <a href="#@item" style="font-size:25px; font-family: 'Fredoka One', cursive;margin:20px">@item</a><br>
+                }
+            </div>
+            <div class="col-sm-4" style="background:url('https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/131205997_380740783220519_1402897379155643903_n.jpg?_nc_cat=106&ccb=2&_nc_sid=ae9488&_nc_ohc=r1lN68iPkR0AX8JyyeY&_nc_ht=scontent.fvca1-1.fna&oh=1ab5f21cf21e56d3765cca05ba1c8ddc&oe=5FFE647D')">
+                <h1 class="h1" style="color:white; font-family: 'Fredoka One', cursive;">Menu</h1>
+                <hr>
+
+                @for (int i = 0; i < ViewBag.countCate; i++)
+                {
+                    <h2 id="@ViewBag.Cate[i]" style="margin-top: 50px; border-left: 4px solid orangered; padding-left: 20px; color: white;">@ViewBag.Cate[i]</h2>
+
+                    <div class="products-center1">
+                        @foreach (var item in @ViewBag.productJoinCate[i])
+                        {
+                            string a = @item.PRODUCT_AVATAR;
+                            <article class="product" style="width: 128px;">
+                                <div class="img-container" style="width: 100%;">
+                                    <img src="~/img/@a" alt="Kafe sữa" class="product-img1">
+                                </div>
+                                <h3 id="product-name"><b>@item.PRODUCT_NAME</b></h3>
+                                <h4>
+                                    <span id="product-price">@item.PRODUCT_PRICE đ</span>
+                                    <button type="button" style="border: none; float:right; background-color: unset;" data-toggle="modal" data-target="#@item.PRODUCT_SLUG">
+                                        <i class='fas fa-plus-circle' style="font-size: 16px; color: white;"></i>
+                                    </button>
+                                </h4>
+
+                                <div class="modal fade" id="@item.PRODUCT_SLUG" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <input type="hidden" value="@item.PRODUCT_PRICE">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-5">
+                                                        <!--Carousel Wrapper-->
+                                                        <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails"
+                                                             data-ride="carousel">
+                                                            <!--Slides-->
+                                                            <div class="carousel-inner" role="listbox">
+                                                                <div class="carousel-item active">
+                                                                    <img class="d-block w-100" src="~/img/@a">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--/.Carousel Wrapper-->
+                                                    </div>
+                                                    <div class="col-lg-7">
+                                                        <h2 class="h2-responsive product-name">
+                                                            <strong>@item.PRODUCT_NAME</strong>
+                                                        </h2>
+                                                        <h4 class="h4-responsive"><span>+</span>@item.PRODUCT_PRICE</h4>
+
+                                                        <div class="descripcion">
+                                                            <p>Mô tả: @item.PRODUCT_DES</p>
+                                                        </div>
+                                                        <!--------------------- SO LUONG -------------------------------------->
+                                                        <!--<div class="section" style="padding-bottom:20px;">
+                                                            <h2 class="title-attr"><small>Số lượng</small></h2>
+                                                            <div class="quantity-container">
+                                                                <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                                                                <input max="20" min="1" type="text" value="1" class="form-control quantity" name="sl" />
+                                                                <input type="hidden" class="price" value="@item.PRODUCT_PRICE">
+                                                                <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                                                            </div>
+                                                        </div>-->
+                                                        <!--Accordion wrapper-->
+                                                        <!--<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">-->
+                                                        <!--------------------CHON LOAI------------------------------------>
+                                                        <!--<div class="card">-->
+                                                        <!-- Card header -->
+                                                        <!--<div class="card-header" role="tab" id="headingOne1">
+                                                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                                                               aria-controls="collapseOne1">
+                                                                <h5 class="mb-0">
+                                                                    Chọn loại <i class="fas fa-angle-down rotate-icon"></i>
+                                                                </h5>
+                                                            </a>
+                                                        </div>-->
+                                                        <!-- Card body -->
+                                                        <!--<div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                                                                 data-parent="#accordionEx">
+                                                                <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
+                                                                <div class="form-check form-check-inline" style=" margin-right: 7rem;">
+                                                                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="option1">
+                                                                    <label class="form-check-label" for="inlineRadio1">Nóng</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="option2" checked>
+                                                                    <label class="form-check-label" for="inlineRadio2">Lạnh</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>-->
+                                                        <!--------------------CHON SIZE-------------->
+                                                        <!--<div class="card">-->
+                                                        <!-- Card header -->
+                                                        <!--<div class="card-header" role="tab" id="headingTwo2">
+                                                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="true"
+                                                               aria-controls="collapseTwo2">
+                                                                <h5 class="mb-0">
+                                                                    Chọn size <i class="fas fa-angle-down rotate-icon"></i>
+                                                                </h5>
+                                                            </a>
+                                                        </div>-->
+                                                        <!-- Card body -->
+                                                        <!--<div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                                                 data-parent="#accordionEx">
+                                                                <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
+                                                                <div class="form-check form-check-inline" style=" margin-right: 7rem;">
+                                                                    <input class="form-check-input" type="radio" name="size" id="inlineRadio1" value="option1" checked>
+                                                                    <label class="form-check-label" for="inlineRadio1">M</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="size" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">L</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>-->
+                                                        <!--------------------CHON LUONG DUONG-------------->
+                                                        <!--<div class="card">-->
+                                                        <!-- Card header -->
+                                                        <!--<div class="card-header" role="tab" id="headingThree3">
+                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                                                               aria-expanded="false" aria-controls="collapseThree3">
+                                                                <h5 class="mb-0">
+                                                                    Chọn lượng đường<i class="fas fa-angle-down rotate-icon"></i>
+                                                                </h5>
+                                                            </a>
+                                                        </div>-->
+                                                        <!-- Card body -->
+                                                        <!--<div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+                                                                 data-parent="#accordionEx">
+                                                                <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
+                                                                <div class="form-check form-check-inline" style=" margin-right: 7rem;">
+                                                                    <input class="form-check-input" type="radio" name="sugar" id="inlineRadio1" value="option1" checked>
+                                                                    <label class="form-check-label" for="inlineRadio1">100%</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="sugar" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">70%</label>
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-check form-check-inline" style=" margin-right: 7.5rem;">
+                                                                    <input class="form-check-input" type="radio" name="sugar" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">50%</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="sugar" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">30%</label>
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="sugar" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">Không</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>-->
+                                                        <!--------------------CHON LUONG DA--------------------------------->
+                                                        <!--<div class="card">-->
+                                                        <!-- Card header -->
+                                                        <!--<div class="card-header" role="tab" id="headingFour4">
+                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour4"
+                                                               aria-expanded="false" aria-controls="collapseFour4">
+                                                                <h5 class="mb-0">
+                                                                    Chọn lượng đá <i class="fas fa-angle-down rotate-icon"></i>
+                                                                </h5>
+                                                            </a>
+                                                        </div>-->
+                                                        <!-- Card body -->
+                                                        <!--<div id="collapseFour4" class="collapse" role="tabpanel" aria-labelledby="headingFour4"
+                                                                 data-parent="#accordionEx">
+                                                                <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
+                                                                <div class="form-check form-check-inline" style=" margin-right: 7rem;">
+                                                                    <input class="form-check-input" type="radio" name="ice" id="inlineRadio1" value="option1" checked>
+                                                                    <label class="form-check-label" for="inlineRadio1">100%</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="ice" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">70%</label>
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-check form-check-inline" style=" margin-right: 7.5rem;">
+                                                                    <input class="form-check-input" type="radio" name="ice" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">50%</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="ice" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">30%</label>
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="ice" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">Không</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>-->
+                                                        <!--------------------CHON TOPPING-------------------------------------->
+                                                        <!--<div class="card">-->
+                                                        <!-- Card header -->
+                                                        <!--<div class="card-header" role="tab" id="headingFive5">
+                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFive5"
+                                                               aria-expanded="false" aria-controls="collapseFive5">
+                                                                <h5 class="mb-0">
+                                                                    Chọn topping<i class="fas fa-angle-down rotate-icon"></i>
+                                                                </h5>
+                                                            </a>
+                                                        </div>-->
+                                                        <!-- Card body -->
+                                                        <!--<div id="collapseFive5" class="collapse" role="tabpanel" aria-labelledby="headingFive5"
+                                                                 data-parent="#accordionEx">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" id="defaultCheck1" value="5000">
+                                                                    <label class="form-check-label" for="defaultCheck1" name="topping">Trân châu đen</label>
+                                                                    <span>(+5000VNĐ)</span>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" id="defaultCheck2" value="6000">
+                                                                    <label class="form-check-label" for="defaultCheck2" name="topping">Trân châu trắng</label>
+                                                                    <span>(+6000VNĐ)</span>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" id="defaultCheck3" value="5000">
+                                                                    <label class="form-check-label" for="defaultCheck3" name="topping">Thạch dừa đào</label>
+                                                                    <span>(+5000VNĐ)</span>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" id="defaultCheck4" value="6000">
+                                                                    <label class="form-check-label" for="defaultCheck4" name="topping">Thạch dừa chanh dây</label>
+                                                                    <span>(+6000VNĐ)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>-->
+                                                        <!--Add to Cart-->
+                                                        <div class="card-body">
+                                                            <div class="text-center">
+                                                                <a style="color: white" class="btn btn-secondary" data-dismiss="modal">Thoát</a>
+                                                                <a style="color: white" data-name="@item.PRODUCT_NAME" data-price="@item.PRODUCT_PRICE" class="btn btn-primary addToCart" name="buy-btn">Chọn mua<i class="fas fa-cart-plus ml-2" aria-hidden="true"></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <!--</div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                }
+            </div>
+            <!--SHOPPING CARTTTTTTTTTTTTTTTT-->
+            <div class="col-sm-5 cartBox" style="background:url('https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/131010219_413416446449745_2564012190437146186_n.jpg?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_ohc=duu5jWJ-y94AX9glqUz&_nc_oc=AQkQMxGtmi0Qtb3lv7kqIofpSyW2rXyNGOlsbyL0acLNI0Nsg-q3OD23CEEvy8MV1B8&_nc_ht=scontent.fvca1-1.fna&oh=a9a95271539dd6fa8391246acb7a271c&oe=5FFD0C7E');" id="shopping-cart">
+                <p class="h2" style="font-family: 'Fredoka One', cursive;">Shopping Cart <span style="font-size: 17px; margin-left: 50px; font-family: 'Fredoka One', cursive;"><a class="del-all" onclick="DeleteAll()" style="cursor: pointer; color: white;">Xóa tất cả</a></span></p>
+                <hr>
+                <table id="gh" border="1" style="font-size: 13px;">
+                </table>
+                <div class="thanhtoan">
+
+                </div>
+                <a class="btn-tt" href="/Menu/Payment" style="margin: 20px;">Thanh Toán</a>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <script>
+            $(document).ready(function(){
+                    topping = []
+                detail = []
+                typee = null;
+                    size = null;
+                    sugar = null;
+                    ice = null;
+
+                $("input[type=checkbox]").click(function () {
+                        var temp = {}
+                    if ($(this).is(':checked')) {
+                            temp.name = $(this).parent().children("label").text();
+                            temp.price = $(this).val();
+                            topping.push(temp);
+                        }
+                    else{
+                            for(i=0;i<topping.length;i++){
+                                if(topping[i].name === $(this).parent().children("label").text())
+                                topping.pop(topping[i]);
+                        }
+                    }
+                });
+                $("input[type=radio]").click(function () {
+                    if ($(this).is(':checked') && $(this).parent().children("input").attr("name")==='type' ){
+                        $(this).parents(".collapse").children("span").text("Bạn đã chọn loại").css("color","green");
+                        typee = $(this).parent().children("label").text();
+                        detail.push(typee);
+                    }
+
+                    if ($(this).is(':checked') && $(this).parent().children("input").attr("name")==='size') {
+                        $(this).parents(".collapse").children("span").text("Bạn đã chọn size").css("color","green");
+                        size = $(this).parent().children("label").text();
+                        detail.push(size);
+                    }
+
+                    if ($(this).is(':checked') && $(this).parent().children("input").attr("name")==='sugar' ) {
+                        $(this).parents(".collapse").children("span").text("Bạn đã chọn % đường").css("color","green");
+                        sugar = $(this).parent().children("label").text();
+                        detail.push(sugar);
+
+                    }
+
+                    if ($(this).is(':checked') && $(this).parent().children("input").attr("name")==='ice' ) {
+                        $(this).parents(".collapse").children("span").text("Bạn đã chọn % đá").css("color","green");
+                        ice = $(this).parent().children("label").text();
+                        detail.push(ice);
+                    }
+
+                });
+
+                $(".modal").on("hidden.bs.modal", function() {
+                    var firstPrice = $(this).children(".modal-dialog").children("input").val();
+                    $(".form-check-input").parents(".collapse").children("span").text("Vui lòng chọn").css("color","red");
+                    $(".form-check-input").prop("checked",false);
+                    $("input[type=text]").val('1');
+                    topping = [];
+                    detail = [];
+                    $(this).find(".h4-responsive").text('+'+firstPrice);
+                });
+
+
+                @for (int i = 0; i <ViewBag.countCate; i++){
+                    @foreach(var item in @ViewBag.productJoinCate[i])
+                             {
+                                @*$('#@item.PRO_NAME').find(".card").remove();*@
+                            }
+                    }
+            });
+
+            const attToCartBtn = document.getElementsByClassName('addToCart');
+            let items = [];
+            totalPrice = 0;
+            totalQuantity = 0;
+
+        for (let i = 0; i < attToCartBtn.length; i++) {
+                attToCartBtn[i].addEventListener("click", function (e) {
+                if (typeof (Storage) !== 'undefined') {
+                    let item = {
+                        id: i + 1,
+                        name: e.target.dataset.name,
+                        price: e.target.dataset.price,
+                        no: 1,
+                    };
+                    if (JSON.parse(localStorage.getItem('items')) === null) {
+                        items.push(item);
+                        localStorage.setItem("items", JSON.stringify(items));
+                        window.location.reload();
+                    }
+                    else{
+                        const localItems = JSON.parse(localStorage.getItem("items"));
+                        localItems.map(data => {
+                            if (item.id == data.id) {
+                                item.no = data.no + 1;
+                            } else {
+                                items.push(data);
+                            }
+                        });
+                        items.push(item);
+                        localStorage.setItem('items', JSON.stringify(items));
+                        window.location.reload();
+                    }
+                } else {
+                    alert('local storage is not working on your browser');
+                }
+            });
+            }
+
+        let no = 0;
+        JSON.parse(localStorage.getItem('items')).map(data => {
+            no = no + data.no;
+        });
+
+@*        plusbtn = '<button data-name="' + data.name + '" data-price="' + data.price + '" class="plus" data - id="11" data - stt="2224" style = "border: none; color: steelblue; float: left; font-size: 16px;" > <i class="fas fa-plus-circle"></i></button >';
+          minusbtn = '<button class="minus" data-id="11" data-stt="2224" style="border: none; color: steelblue; float: right; font-size: 16px;"><i class="fas fa-minus-circle"></i></button>';
+    *@
+        //adding cartbox data to table
+        function drawTable() {
+            const cartBox = document.querySelector('.cartBox');
+            const cardBoxTable = cartBox.querySelector('table');
+            let tableData = '';
+            tableData += '<tr style="width: 10%;"><th>STT</th><th>Sản phẩm</th><th>Số lượng</th><th>Thành tiền</th><th>Thao tác</th></tr>';
+
+            if (localStorage.getItem("items") === null) {
+                tableData += '<tr><td colspan="5">No items found</td></tr>'
+            } else {
+                JSON.parse(localStorage.getItem('items')).map(data => {
+                    totalPrice += parseInt(data.price * data.no);
+                    totalQuantity += parseInt(data.no);
+                    tableData += '<tr><td>' + data.id + '</td><td>' + data.name + '</td><td style="text-align: center;">'
+                        + data.no + '</td><td>' + data.price * data.no + 'đ</td><td><a href="#" style="border: none; color: white; font-size: 20px; background-color: unset;" onclick=Delete(this);><i class="fas fa-times-circle"></i></a></td></tr>';
+                });
+            }
+            tableData += '<tr><td>Tổng số lượng</td><td colspan="4" style="text-align: right;">' + totalQuantity + '</td></tr>';
+            tableData += '<tr><td>Tổng tiền</td><td colspan="4" style="text-align: right;">' + totalPrice + 'đ</td></tr>';
+
+            cardBoxTable.innerHTML = tableData;
+        }
+
+        drawTable();
+
+        @*const plusBtn = document.getElementsByClassName('plus');
+        console.log(plusBtn.length);
+        for (let i = 0; i < plusBtn.length; i++) {
+            plusBtn[i].addEventListener("click", function (e) {
+                alert('OK');
+                let item = {
+                    id: i + 1,
+                    name: e.target.dataset.name,
+                    price: e.target.dataset.price,
+                    no: 1,
+                };
+                console.log(item.name);
+            });
+        }*@
+
+        function DeleteAll() {
+            localStorage.clear();
+            const cartBox = document.querySelector('.cartBox');
+            const cardBoxTable = cartBox.querySelector('table');
+            let tableData = '';
+            totalPrice = 0;
+            totalQuantity = 0;
+            tableData += '<tr style="width: 10%;"><th>STT</th><th>Sản phẩm</th><th>Số lượng</th><th>Thành tiền</th><th>Thao tác</th></tr>';
+            tableData += '<tr><td>Tổng số lượng</td><td colspan="4" style="text-align: right;">' + totalQuantity + '</td></tr>';
+            tableData += '<tr><td>Tổng tiền</td><td colspan="4" style="text-align: right;">' + totalPrice + 'đ</td></tr>';
+            cardBoxTable.innerHTML = tableData;
+            alertify.success("Xóa tất cả sản phẩm khỏi giỏ hàng");
+        };
+
+       @* if (localStorage.getItem("items") === null) {
+            alert('OK');
+            const divthanhtoan = document.querySelector('.thanhtoan');
+            divthanhtoan.innerHTML = '<a class="btn-tt" onclick="myAlert()">Thanh Toán</a>';
+        }*@
+    </script>
+</body>
+</html>

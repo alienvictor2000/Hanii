@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hani</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site1.css" />
+</head>
+<style>
+    .dropbtn {
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 2;
+    }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+    <header>
+        <div class="contenedor" id="contenedor">
+            <nav style="position: fixed; width: 100%;" class="navbar">
+                <div class="navbar-header">
+                    <img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img" />
+
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/About">About</a> </li>
+                    <li><a href="/Menu">Menu</a></li>
+                    <li><a href="/Store">Store</a></li>
+                    <li><a href="https://www.facebook.com/HaniKafeKitchen"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/hanikafekitchen148/"><i class="fa fa-instagram"></i></a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button style="margin-top: 10px; font-size: 20px;" class="dropbtn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <form method="post" asp-controller="Home" asp-action="SearchProduct">
+                                    <label>
+                                        <input name="searchInfo" type="text" class="form-control" maxlength="128" placeholder="Trà, Kafe , ...">
+                                    </label>
+                                    <button type="submit" class="btn-default"><i style=" font-size: 18px; margin-top: 8px;" class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="textos">
+            <h1 class="nombre">Hani <span> kafé & kitchen </span></h1>
+            <h3>A bad day with coffee is better than a good day without it.</h3>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer class="border-top footer text-muted" style="margin-top: 20px; background-color:lightgray;">
+        <br>
+        <div class="info1">
+            <p><i class="fa fa-map-marker" aria-hidden="true"> <span style="padding-left: 5px;"> Địa chỉ: 148 Tô Vĩnh Diện, Thành phố Pleiku, Gia Lai </span></i></p>
+            <p><i class="fa fa-phone" aria-hidden="true"> <span style="padding-left: 5px;"> Điện thoại: 0916 534 751 </span> </i></p>
+            <p><i class="fa fa-envelope" aria-hidden="true"> <span style="padding-left: 5px;"> Email: nnguyenduchuy2000@gmail.com </span></i></p>
+        </div>
+        <br>
+        <div class="info3">
+            <ul>
+                <li style="font-size: 15px">
+                    Monday-Friday
+                </li>
+                <li style="font-size: 15px">
+                    Saturday-Sunday
+                </li>
+                <br>
+                <li>
+                    7:00 to 23:00
+                </li>
+                <li>
+                    9:00 to 22:00
+                </li>
+            </ul>
+        </div>
+        <div class="info2">
+            <p>
+                Copyright © 2020 All rights reserved | This template is made with by <span style="color: brown">18520310-18520840</span>
+                <a href="#">
+                    <i class="fa fa-facebook-square" aria-hidden="true"
+                       style="margin-left: 20px"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"
+                       style="margin-left: 20px"></i>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</html>
