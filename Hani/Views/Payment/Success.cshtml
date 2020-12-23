@@ -170,7 +170,19 @@
         }
     </style>
     <script>
-
+        $(function () {
+            $('a[name="print"]').click(function () {
+                var pageTitle = 'Hóa dơn đặt hàng',
+                    stylesheet = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
+                    win = window.open('', 'Print', 'width=900,height=600');
+                win.document.write('<html><head><title>' + pageTitle + '</title>' +
+                    '<link rel="stylesheet" href="' + stylesheet + '">' +
+                    '</head><body>' + $('.table')[0].outerHTML + '</body></html>');
+                win.document.close();
+                win.print();
+                return false;
+            });
+        });
     </script>
 </head>
 <div class="contenedor">
@@ -203,8 +215,8 @@
                             <!-- FORM THONG TIN GIAO HANG -->
                             <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                                  data-parent="#accordionEx">
-                                <h2 style="color: green;"><i>Đặt hàng thành công</i></h2>
-                                <form method="POST" asp-controller="Payment" asp-action="InsertTransaction">
+                                <h4 style="color: green; margin-bottom: 30px;"><i>Đặt hàng thành công</i></h4>
+                                @*<form method="POST" asp-controller="Payment" asp-action="InsertTransaction">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1"><i class="fas fa-user"></i></label>
                                         <input asp-for="Tr_name" style="width: 85%;" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Tên người nhận" value="" required>
@@ -224,7 +236,7 @@
                                     <input type="hidden" asp-for="Tr_status" value="0"></input>
                                     <input type="hidden" asp-for="Tr_total" id="total" value=""></input>
                                     <button type="submit" class="btn-dh" href="#">Đặt hàng</button>
-                                </form>
+                                </form>*@
                             </div>
                         </div>
                     </div>
@@ -273,9 +285,11 @@
                     <div id="collapseOne1" class="collapse show cartBox" role="tabpanel" aria-labelledby="headingOne1"
                          data-parent="#accordionEx">
 
-                        <table id="gh" border="1" style="font-size: 14px;">
+                        <table class="table" id="gh" border="1" style="font-size: 14px;">
+
                         </table>
                         <a class="btn-ttmh" href="/Menu/Order1">Tiếp tục mua hàng</a>
+                        <a class="btn-ttmh" name="print" style="color: #5666a5;">In hóa đơn</a>
                     </div>
                 </div>
             </div>

@@ -44,7 +44,7 @@ body {
     z-index: 2;
     background: linear-gradient(45deg, black, transparent);
     text-align: center;
-    padding: 0px 60px 0 60px;
+    padding: 0px 120px;
     font-size: 20px;
 }
 
@@ -106,7 +106,7 @@ header {
 
     header .contenedor {
         position: relative;
-        height: 800px;
+        height: 500px;
     }
 
     header .textos {

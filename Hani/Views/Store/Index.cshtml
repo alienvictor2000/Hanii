@@ -10143,15 +10143,15 @@
                     <li><a href="https://www.instagram.com/hanikafekitchen148/"><i class="fab fa-instagram"></i></a></li>
                     <li>
                         <div class="dropdown">
-                            <button class="dropbtn" style="font-size: 20px;">
+                            <button style="margin-top: 10px; font-size: 20px;" class="dropbtn">
                                 <i class="fa fa-search"></i>
                             </button>
                             <div class="dropdown-content">
-                                <form class="form-inline" action="{{ route('get.product.list') }}" method="get">
-                                    <div class="form-group">
+                                <form method="post" asp-controller="Home" asp-action="SearchProduct">
+                                    <label>
                                         <input name="searchInfo" type="text" class="form-control" maxlength="128" placeholder="Trà, Kafe , ...">
-                                    </div>
-                                    <button type="submit" class="btn-default"><i class="fa fa-search"></i></button>
+                                    </label>
+                                    <button type="submit" class="btn-default"><i style=" font-size: 18px; margin-top: 8px;" class="fa fa-search"></i></button>
                                 </form>
                             </div>
                         </div>
